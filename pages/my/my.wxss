@@ -1,0 +1,128 @@
+/* pages/My/My.wxss */
+.page{
+  background: linear-gradient(to bottom, #fbe7e6, #fbe7e6); 
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  padding-top: 170rpx;
+}
+
+.page .user-area{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40rpx;
+}
+
+.page .user-area .user-box{
+  display: flex;
+  align-items: center;
+}
+.page .user-area .avatar{
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}
+
+.page .user-area .name{
+   font-size: 28rpx;
+   margin-left: 24rpx;
+}
+
+.page .user-area .login-btn{
+  width: 150rpx;
+  height: 62rpx;
+  display: flex;
+  background-color: brown;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  font-size: 25rpx;
+  border-radius: 10rpx;
+}
+
+.page .user-area .login-btn:active{
+  background-color:red;
+}
+
+.card-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60rpx;
+}
+
+
+.card-container .card{
+  width: 330rpx;
+  box-sizing: border-box;
+  border-radius: 15rpx;
+  padding: 23rpx;
+  display: flex;
+  background-color: #fff;
+  justify-content: space-between;
+}
+
+.card-container .card .icon{
+  width: 72rpx;
+  height: 72rpx;
+}
+
+.card-container .card .count{
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+.card-container .card .name{
+  font-size: 17px;
+}
+
+.list-items{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.list-items .item{
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 36rpx 30rpx;
+  align-items: center;
+}
+
+.list-items .item .content{
+  display: flex;
+} 
+
+.list-items .item .content .icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 25rpx;
+}
+
+.list-items .item .content .label{
+  font-size: 26rpx;
+  font-weight: bold;
+}
+
+.list-items .item .left-arrow{
+  font-size: 25rpx;
+}
+
+.list-items .item_last{
+  margin-top: 30rpx;
+}
+
+.tuichu-btn{
+  margin-top: 20rpx;
+  width:700rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px red solid;
+  color: red;
+}

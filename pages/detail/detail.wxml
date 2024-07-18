@@ -1,0 +1,43 @@
+<van-nav-bar title="奶茶详情" left-text="返回" right-text="按钮" left-arrow bind:click-left="onClickLeft" />
+<!-- 详情页面 -->
+<view class="good-detail-container">
+  <!-- 标签 -->
+  <view class="good-detail-bar">
+    <image src="{{bgImg[a-1].img}}">
+    </image>
+    <view style="display: block;margin-top: 15px;margin-left: 15px;">{{bgImg[a-1].name}}</view>
+    <!-- 选择规格 -->
+    <view style="font-size: small;margin-left: 15px;margin-top:15px">甜度</view>
+    <van-radio-group style="display: flex;margin-left: 13px;margin-top: 15px;" direction="horizontal" value="{{ radio }}" bind:change="onChange">
+      <van-radio name="1" checked-color="red">全糖</van-radio>
+      <van-radio name="2" checked-color="red">半糖</van-radio>
+      <van-radio name="3" checked-color="red">0糖</van-radio>
+    </van-radio-group>
+    <view style="font-size: small;margin-left: 15px;margin-top:20px">温度</view>
+    <van-radio-group style="display: flex;margin-left: 13px;margin-top: 15px;" direction="horizontal" value="{{ radio2 }}" bind:change="onChange2">
+      <van-radio name="1" checked-color="red">热</van-radio>
+      <van-radio name="2" checked-color="red">去冰</van-radio>
+      <van-radio name="3" checked-color="red">少冰</van-radio>
+      <van-radio name="4" checked-color="red">正常冰</van-radio>
+    </van-radio-group>
+    <view style="font-size: small;margin-left: 15px;margin-top:20px">规格</view>
+    <van-radio-group style="display: flex;margin-left: 13px;margin-top: 15px;" direction="horizontal" value="{{ radio3 }}" bind:change="onChange3">
+      <van-radio name="1" checked-color="red">轻盈版</van-radio>
+      <van-radio name="2" checked-color="red">浓郁版</van-radio>
+    </van-radio-group>
+    <!-- 加入购物车 -->
+    <view class="line"></view>
+    <view class="shop">
+      <view>￥{{bgImg[a-1].price}} </view>
+      <!-- 规格 -->
+      <view style="font-size: small;">
+        {{selectedText1}}，
+        {{selectedText2}}，
+        {{selectedText}}
+        <van-stepper value="{{ 1 }}" min="1" max="9" style="float:right;" theme="round" bind:change="onBuyNum" />
+      </view>
+      <!-- 底部价格栏加入购物车 -->
+      <van-button round type="info" class="add" bind:tap="onAddToOrder" block>加入购物车</van-button>
+    </view>
+  </view>
+</view>

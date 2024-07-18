@@ -1,0 +1,177 @@
+// {
+// 	"pages": [{
+// 		"path": "pages/index/index",
+// 		"style": {
+// 			"navigationBarTitleText": "uni-app"
+// 		}
+// 	}],
+// 	"globalStyle": {
+// 		"navigationBarTextStyle": "black",
+// 		"navigationBarTitleText": "uni-app",
+// 		"navigationBarBackgroundColor": "#F8F8F8",
+// 		"backgroundColor": "#F8F8F8",
+// 		"app-plus": {
+// 			"background": "#efeff4"
+// 		}
+// 	}
+// }
+{
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"usingComponents": {},
+				"window": {
+					"navigationBarTitleText": "首页"
+				}
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"usingComponents": {},
+				"window": {
+					"navigationBarBackgroundColor": "#ffffff",
+					"navigationBarTextStyle": "black",
+					"navigationBarTitleText": "title",
+					"backgroundColor": "#eeeeee",
+					"backgroundTextStyle": "light",
+					"enablePullDownRefresh": true
+				}
+			}
+		},
+		{
+			"path": "pages/list/list",
+			"style": {
+				"usingComponents": {
+					// "van-sidebar": "/vant/sidebar/index"
+					// "van-sidebar-item": "@vant/weapp/sidebar-item/index",
+					// "van-card": "@vant/weapp/card/index"
+				}
+			}
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pages/order/order",
+			"style": {
+				"usingComponents": {},
+				"navigationBarTitleText": "订单",
+				"navigationStyle": "default"
+			}
+		},
+		{
+			"path": "pages/search/search",
+			"style": {}
+		},
+		{
+			"path": "pages/detail/detail",
+			"style": {
+				"usingComponents": {
+					// "van-nav-bar": "@vant/weapp/nav-bar/index",
+					// "van-radio": "@vant/weapp/radio/index",
+					// "van-radio-group": "@vant/weapp/radio-group/index",
+					// "van-button": "@vant/weapp/button/index",
+					// "van-stepper": "@vant/weapp/stepper/index"
+				}
+			}
+		},
+		{
+			"path": "pages/buy/buy",
+			"style": {
+				"usingComponents": {},
+				"navigationBarTitleText": "提交订单",
+				"navigationStyle": "default"
+			}
+		},
+		{
+			"path": "pages/mycontent/mycontent",
+			"style": {
+				"usingComponents": {}
+			}
+		},
+		{
+			"path": "pages/loginx/loginx",
+			"style": {
+				"usingComponents": {},
+				"window": {
+					"navigationBarBackgroundColor": "#ffffff",
+					"navigationBarTextStyle": "black",
+					"navigationBarTitleText": "title",
+					"backgroundColor": "#eeeeee",
+					"backgroundTextStyle": "light",
+					"enablePullDownRefresh": true
+				}
+			}
+		}
+	],
+	"permission": {
+		"scope.userLocation": {
+			"desc": "你的位置信息将用于小程序位置接口的效果展示"
+		},
+		"scope.userInfo": {
+			"desc": "你的头像、昵称等信息将用于小程序的个性化展示"
+		}
+	},
+	"window": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "奶茶店",
+		"navigationStyle": "custom",
+		"enablePullDownRefresh": true,
+		"navigationBarBackgroundColor": "#f6f6f6"
+	},
+	"rendererOptions": {
+		"skyline": {
+			"defaultDisplayBlock": true,
+			"disableABTest": true,
+			"sdkVersionBegin": "3.0.0",
+			"sdkVersionEnd": "15.255.255"
+		}
+	},
+	"tabBar": {
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "/static/imgs/首页.jpg",
+				"selectedIconPath": "/static/imgs/首页_select.png"
+			},
+			{
+				"pagePath": "pages/list/list",
+				"text": "点餐",
+				"iconPath": "/static/imgs/点餐.jpg",
+				"selectedIconPath": "/static/imgs/点餐_select.jpg"
+			},
+			{
+				"pagePath": "pages/order/order",
+				"text": "订单",
+				"iconPath": "/static/imgs/订单.png",
+				"selectedIconPath": "/static/imgs/订单_select.png"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"text": "我的",
+				"iconPath": "/static/imgs/我的.jpg",
+				"selectedIconPath": "/static/imgs/我的_select.jpg"
+			}
+		]
+	},
+	"componentFramework": "glass-easel",
+	"sitemapLocation": "sitemap.json",
+	"lazyCodeLoading": "requiredComponents",
+	"usingComponents": {},
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+		]
+	}
+}

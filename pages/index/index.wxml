@@ -1,0 +1,144 @@
+<!--pages/index/index.wxml-->
+<!-- 首页 -->
+
+<view class="mainpage">
+  <view style="background: rgb(162, 206, 248);">
+
+  </view>
+  <view class="head" style="background-color:rgb(162, 206, 248);">
+    <view class="swiper-container">
+      <swiper style="width:750rpx;height:1000rpx;" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{500}}">
+        <block wx:for="{{swiperImages}}" wx:key="index">
+          <swiper-item style="display: flex;align-items: center;justify-content: center;">
+            <image src="{{item.url}}" style="width:100%;height:100%;"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+</view>
+<view class="background-img">
+  <view class="book-window">
+    <view class="search">
+      <input class="search-frame" bindinput="bindSearchInput" placeholder="搜索新品" type="text" />
+      <navigator bind:tap="getValue" url="../list/list" open-type="switchTab" class="search-icon">
+        <image src="../../components/imgs/search.jpg" style="width: 100%;height: 100%;" />
+      </navigator>
+    </view>
+    <view class="deliver">
+      <view class="selfDeliver">
+    
+          <navigator bind:tap="ziqu" open-type="switchTab" url="{{deliverPath}}" open-type="{{navigatorWay}}" style="display: inline-block;">
+            <image class="selfDeliver-image" src="/components/imgs/selfDeliver .gif" />
+          </navigator>
+     
+       
+      </view>
+      <view class="otherDeliver">
+          <navigator bind:tap="waimai" open-type="{{navigatorWay}}" url="{{deliverPath}}" style="display: inline-block;">
+            <image class="otherDeliver-image" src="/components/imgs/otherDeliver.jpg" />
+          </navigator>
+      </view>
+    </view>
+
+    <view class="coupon">
+      <scroll-view class="coupon-list" scroll-x>
+        <view class="coupon-list-item" id="fmi-1">
+          <view class="coupon-item" style="display: flex;flex-direction: row;">
+            <view class="coupon-content " style="flex:70%;display: flex;align-items: center;justify-content: center;">
+              <image style="width: 100%;height: 200rpx;" src="/components/imgs/coupon1.jpg" />
+            </view>
+            <view class="coupon-start">
+              <navigator open-type="{{navigatorWay}}" url="{{lingquan}}" class="eye-contact">领券1</navigator>
+            </view>
+          </view>
+        </view>
+
+        <view class="coupon-list-item" id="fmi-2">
+          <view class="coupon-item" style="display: flex;flex-direction: row;">
+            <view class="coupon-content " style="flex:70%;display: flex;align-items: center;justify-content: center;">
+              <image style="width: 100%;height: 200rpx;" src="/components/imgs/coupon2.jpg" />
+            </view>
+            <view class="coupon-start">
+              <navigator open-type="{{navigatorWay}}" url="{{lingquan}}" class="eye-contact">领券2</navigator>
+            </view>
+          </view>
+        </view>
+
+        <view class="coupon-list-item" id="fmi-3">
+          <view class="coupon-item" style="display: flex;flex-direction: row;">
+            <view class="coupon-content " style="flex:70%;display: flex;align-items: center;justify-content: center;">
+              <image style="width: 100%;height: 200rpx;" src="/components/imgs/coupon3.jpg" />
+            </view>
+            <view class="coupon-start">
+              <navigator open-type="redirect" url="{{lingquan}}" class="eye-contact">领券3</navigator>
+            </view>
+          </view>
+        </view>
+
+
+        <!-- <view class="coupon-list-item" id="fmi-1">
+          <view class="coupon-item" style="display: flex;flex-direction: row;">
+            <view class="coupon-content " style="flex:70%;display: flex;align-items: center;justify-content: center;">
+              <image style="width: 100%;height: 200rpx;" src="/components/imgs/coupon1.jpg" />
+            </view>
+            <view class="coupon-start" style="flex:30%;display: flex;align-items:center;justify-content: center; border-left:1px solid lightcoral;">
+              <navigator url="{{lingquan}}" class="eye-contact" style="text-align: center; color:red">领券3</navigator>
+            </view>
+          </view>
+        </view> -->
+      </scroll-view>
+
+    </view>
+
+
+    <view class="function-window">
+      <view class="specialCoupon" style="width: 95%;height:200rpx;">
+        <navigator class="specialCoupon-item" url="{{specialCouponPath}}" open-type="switchTab">
+          <image class="specialCoupon-item-image" style="width:100%;height: 200rpx;" src="../../components/imgs/specialCoupon.jpg" />
+        </navigator>
+      </view>
+      <view class="discount" >
+        <navigator class="discount-item"   url="{{discountPath}}" open-type="switchTab">
+          <image class="discount-item-image" src="../../components/imgs/discount-item-image1.jpg"  />
+        </navigator>
+        <navigator class="discount-item"   url="{{distcountPath}}" open-type="switchTab">
+          <image class="discount-item-image" src="../../components/imgs/discount-item-image2.jpg"  />
+        </navigator>
+      </view>
+      <view class="functions" >
+        <navigator url="{{functionPath1}}" open-type="switchTab" class="function-item" >
+          <image class="function-item-image"  src="../../components/imgs/function1.jpg" />
+        </navigator>
+
+        <navigator url="{{functionPath2}}" open-type="switchTab" class="function-item" >
+          <image class="function-item-image"  src="../../components/imgs/function2.jpg" />
+        </navigator>
+
+        <navigator url="{{functionPath3}}" open-type="switchTab" class="function-item" >
+          <image class="function-item-image"  src="../../components/imgs/function4.jpg" />
+        </navigator>
+
+        <navigator url="{{functionPath4}}" open-type="switchTab" class="function-item" >
+          <image class="function-item-image"  src="../../components/imgs/function3.jpg" />
+        </navigator>
+      
+      </view>
+    </view>
+    <image src="../../components/imgs/加盟.jpg" style="width: 100%;height:400rpx ;"/>
+
+  </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</view>

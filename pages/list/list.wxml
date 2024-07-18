@@ -1,0 +1,94 @@
+<!--pages/list/list.wxml-->
+<!-- 搜索框 -->
+<!-- <navigator url="../list/list"> -->
+  <view class="searchRoot">
+    <input class="searchInput" placeholder="搜索饮品" />
+    <image class="searchImg" src="../../components/imgs/搜索.png"></image>
+  </view>
+<!-- </navigator> -->
+<!--中间-->
+<view class="mid" style="padding-left: 50rpx;position: fixed;padding-top:80px;z-index: 98;background-color: white;">
+  <view>
+    <view>林大店 ></view>
+    <view style="font-size: 24rpx; padding-top: 4px; color: rgb(199, 199, 199);">距离您100m</view>
+  </view>
+
+  <view style="display: flex;">
+    <image src="../../components/imgs/公告.png" style="width: 20px; height: 20px;"></image>
+    <view style="font-size: 10px; padding-left: 6px;padding-top: 4px;">非会员单笔买满十杯，送一杯，详情请见订购须知</view>
+  </view>
+  
+</view>
+
+<!-- 奶茶饮品区 -->
+<view class="menu" style="display: flex;margin-top:141px;margin-bottom: 0;">
+
+<!-- 左侧导航栏 -->
+  <view class="menu-left" style="position:fixed;">
+  <!-- 绑定change事件读取左侧导航的标签的index，修改scrollIntoViewId属性为右侧奶茶区对应的id -->
+    <van-sidebar active-key="{{ activeKey }}" bind:change="onChange">
+      <!-- disabled:禁用元素 -->
+      <van-sidebar-item title="圣诞限定" disabled />
+      <van-sidebar-item title="草莓系列" />
+      <van-sidebar-item title="黑糖系列" />
+      <van-sidebar-item title="真鲜果茶" />
+      <van-sidebar-item title="轻牛乳茶" />
+    </van-sidebar>
+  </view>
+
+<!-- 右侧奶茶选择区 -->
+<!-- 通过scroll-into-view配合id实现页内跳转 -->
+<!-- 通过读取右侧滑动的距离scrollTop分区修改左侧导航栏选中的标签值activeKey -->
+  <scroll-view scroll-y="true" style="height: 80vh; width: 80%; margin-left: 20%;" 
+  scroll-into-view="{{scrollIntoViewId}}" class="menu-right" bindscroll="handleScroll">
+    <!-- 草莓系列 -->
+    <view id="to1" style="font-weight: bold;margin-left: 10px;margin-top:15px;margin-bottom: 10px;">草莓系列</view>
+    <van-card wx:for="{{goods1}}" wx:for-item="t" wx:key="title" price="{{t.price}}" desc="{{t.desc}}" title="{{t.title}}" thumb="{{t.thumb}}">
+      <view slot="footer">
+        <van-button class="my-button" size="mini" bindtap="gotoPage" data-id="{{t.id}}" round="true" color="linear-gradient(to right, #4bb0ff, #6149f6)">选规格</van-button>
+      </view>
+    </van-card>
+
+    <!-- 黑糖系列 -->
+    <view id="to2" style="font-weight: bold;margin-left: 10px;margin-top:15px;margin-bottom: 10px;">黑糖系列</view>
+    <van-card wx:for="{{goods2}}" wx:for-item="t" wx:key="title" 
+    price="{{t.price}}" desc="{{t.desc}}" title="{{t.title}}" thumb="{{t.thumb}}" tag="火爆"
+    origin-price="{{index === 0 ? '16' : (index === 1 ? '14' : (index === 2 ? '16' : ''))}}">
+      <view slot="footer">
+        <van-button class="my-button" size="mini" bindtap="gotoPage" data-id="{{t.id}}">选规格</van-button>
+      </view>
+    </van-card>
+
+    <!-- 真鲜果茶 -->
+    <view id="to3" style="font-weight: bold;margin-left: 10px;margin-top:15px;margin-bottom: 10px;">真鲜果茶</view>
+    <van-card wx:for="{{goods3}}" wx:for-item="t" wx:key="title" price="{{t.price}}" desc="{{t.desc}}" title="{{t.title}}" thumb="{{t.thumb}}">
+      <view slot="footer">
+        <van-button class="my-button" size="mini" bindtap="gotoPage" data-id="{{t.id}}">选规格</van-button>
+      </view>
+    </van-card>
+
+     <!-- 轻牛乳茶 -->
+     <view id="to4" style="font-weight: bold;margin-left: 10px;margin-top:15px;margin-bottom: 10px;">轻牛乳茶</view>
+    <van-card wx:for="{{goods4}}" wx:for-item="t" wx:key="title" price="{{t.price}}" desc="{{t.desc}}" title="{{t.title}}" thumb="{{t.thumb}}">
+      <view slot="footer">
+        <van-button class="my-button" size="mini" bindtap="gotoPage" data-id="{{t.id}}">选规格</van-button>
+      </view>
+    </van-card>
+    <!-- 空卡片，防止最底部的商品被购物车遮挡 -->
+    <van-card>
+    </van-card>
+  </scroll-view>
+    <!-- 右侧区域结束 -->
+
+</view>
+
+<!--底部购物车区域-->
+<view class="bottom_cart">
+  <view class="cart">
+    <image class="cart_img" src="../../components/imgs/购物车.png"></image>
+    <text class="cart_num">{{totalnum}}</text>
+  </view>
+  <view class="moeny">总价:{{totalPrice}}元</view>
+  <!-- 通过buy事件跳转到订单页面 -->
+  <view class="buy" bindtap="buy">去支付</view>
+</view>

@@ -1,0 +1,49 @@
+<view>
+  <view>
+    <block wx:for="{{userBackgrounds}}" wx:key="id">
+      <view wx:if="{{item.id===bgId}}" style="background-image: url({{item.url}});width: 100%;height:100vh;background-size: cover;z-index: -1; ">
+        <button  style="width:70px;height:70px;border-radius: 50%;font-size: small;display: flex; position: absolute;bottom: 30rpx;left: 280rpx;border: 2rpx solid white;color: white;background-color: deepskyblue;" bindtap="testbtn">
+          <view style=" display: flex;align-items: center;font-size:9px;align-items: center; opacity: 0.8;" >
+            换个主题
+          </view>
+        </button>
+        <navigator open-type="switchTab" url="../index/index">
+        <button style="width:70px;height:70px;border-radius: 50%;font-size: small;display: flex; position: absolute;top: 40rpx;left: 10rpx;border: 2rpx solid white;color: white;background-color: deepskyblue;">
+          <view style="display: flex;align-items: center;font-size:9px;opacity: 0.8;">
+         
+              <text style="text-align: center;">Home</text>
+            
+          </view>
+        </button>
+      </navigator>
+        <view style="height:100rpx"></view>
+        <view class="login-content upper">
+          <view class="login upper">
+            <view class="userInfo" >
+              <block wx:if="{{login_userInfo!==null}}" >
+                <image class="userInfoFace"  src="{{login_userInfo.avatarUrl}}"  />
+              
+              </block>
+              <block wx:if="{{login_userInfo===null}}">
+                <image  class="userInfoFace" src="../../components/imgs/我的_select.jpg" />
+              </block>
+         
+               
+           
+             
+            </view>
+            <view style="display: inline-block flex;align-items: center;justify-content: center;"> 
+            <button bind:tap="login" style="display: inline-block;width: 100%;border:1rpx solid white;color: deepskyblue;background-color: white;" >登录</button>
+            </view>
+            <view class="userInfomation">
+               <view class="language">language:{{login_userInfo.language}}</view>
+               <view class="nickname">nickName:{{login_userInfo.nickName}}</view>
+            </view>
+
+          </view>
+        </view>
+      </view>
+    </block>
+
+  </view>
+</view>

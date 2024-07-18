@@ -1,0 +1,65 @@
+/* pages/buy/buy.wxss */
+Page{
+  background-color: rgb(236, 236, 236)
+}
+.store{
+  border-radius: 10rpx;
+  margin-top: 30rpx;
+  width: 90%;
+  height: 100rpx;
+  background-color: white;
+  margin: auto;
+  line-height: 100rpx;
+}
+.order{
+  border-radius: 10rpx;
+  width: 90%;
+  height: 100%;
+  background-color: white;
+  margin:30rpx auto;
+  padding: 10px;
+}
+.cart_img{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 10rpx;
+}
+.order_list{
+  display: flex;
+  width: 90%;
+  margin: 30rpx;
+}
+.remarks{
+  border-radius: 10rpx;
+  width: 90%;
+  height: 100%;
+  background-color: white;
+  margin:30rpx auto;
+  line-height: 80rpx;
+  padding: 10px;
+}
+.buttom{
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  border-radius: 10rpx;
+  width: 100%;
+  height: 130rpx;
+  background-color: white;
+  margin-bottom: 30rpx;
+  line-height: 130rpx;
+}
+.buttom_button{
+  border-radius: 10rpx;
+  width: 120px;
+  margin: auto;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin-right: 20rpx;
+  text-align: center;
+  background-color: #05a515;
+  color: white;
+  
+}

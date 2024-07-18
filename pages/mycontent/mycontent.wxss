@@ -1,0 +1,9 @@
+/* pages/mycontent/mycontent.wxss */
+.page{
+  padding-top: 150rpx;
+}
+
+.fanhui{
+  margin-top: 70rpx;
+  color: skyblue;
+}

@@ -1,0 +1,43 @@
+<!--pages/buy/buy.wxml-->
+<view style="width: 100%;height: 100%;margin-top: 50rpx;">
+  <view class="store">
+    <text style="margin-left: 20rpx;font-weight:600;">林大店 ></text>
+  </view>
+  <view class="order">
+    <block wx:for="{{buys}}" wx:key="item">
+      <view class="order_list">
+        <view>
+          <image class="cart_img" src="{{item.pic}}"></image>
+        </view>
+        <view style="display: flex;flex-direction: column;">
+          <view>{{item.name}}</view>
+          <view style="font-size: 20rpx;">{{item.size}}/{{item.temperature}}/{{item.sweetness}}</view>
+        </view>
+        <view style="text-align: right;">
+          <view style="display: flex;flex-direction: column;">
+            <view>￥{{item.price}}</view>
+            <view style="font-size: 20rpx;">X{{item.number}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view style="text-align: right;">共{{totalnum}}件商品，小计￥{{totalPrice}}.00元</view>
+  </view>
+
+  <view class="remarks">
+  <view class="weui-cells__title">备注：</view>
+        <view class="weui-cells weui-cells_after-title" style="border-radius: 10rpx;">
+            <view class="weui-cell weui-cell_active">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="input"  placeholder-class="weui-input__placeholder" placeholder="请输入备注" />
+                </view>
+            </view>
+        </view>
+  </view>
+</view>
+<view class="buttom">
+<text style="margin-left: 20rpx; flex:1;">待支付，￥{{totalPrice}}.00</text>
+<view class="buttom_button">
+<text bindtap="upOrder">提交订单</text>
+</view>
+</view>
