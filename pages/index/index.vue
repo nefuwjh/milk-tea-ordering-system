@@ -12,7 +12,7 @@
 		      <swiper style="width:750rpx;height:1000rpx;" :indicator-dots="true" :autoplay="true" :interval="5000" :duration="500">
 		        <block v-for="(item,index) in swiperImages">
 		          <swiper-item style="display: flex;align-items: center;justify-content: center;">
-		            <image :src="item.url" style="width:100%;height:100%;"></image>
+		            <image :src="item" style="width:100%;height:100%;"></image>
 		          </swiper-item>
 		        </block>
 		      </swiper>
@@ -141,11 +141,11 @@
 		data() {
 			return {
 				swiperImages: [
-				  '/components/imgs/奶茶1.jpg',
-				  '/components/imgs/奶茶2.jpg',
-				  '/components/imgs/奶茶3.jpg',
-				  '/components/imgs/奶茶4.jpg',
-				  '/components/imgs/奶茶5.jpg',
+				  '/static/imgs/奶茶1.jpg',
+				  '/static/imgs/奶茶2.jpg',
+				  '/static/imgs/奶茶3.jpg',
+				  '/static/imgs/奶茶4.jpg',
+				  '/static/imgs/奶茶5.jpg',
 				],
 				lingquan: null,
 				deliverPath: null,
