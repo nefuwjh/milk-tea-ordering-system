@@ -5,7 +5,7 @@
 	      <image class="avatar" :src="pic ? pic : old_pic"></image>
 	      <view  class="name">{{name ?  name : '登录获得更多会员权益' }}</view>
 	    </view>
-	    <view v-if="ifName" class="login-btn" @tap="login">授权登录</view>
+	    <view v-if="name" class="login-btn" @tap="login">授权登录</view>
 	  </view>
 	  <view class="card-container">
 	    <view class="card">
@@ -32,7 +32,7 @@
 	    </view>
 	    <view class="item" @tap="click1" data-code="privacy">
 	         <view class="content">
-	          <image class="icon" :src="swiperImages[3].url"></image>
+	          <image class="icon" :src="swiperImages[3]"></image>
 	          <view class="label"  >隐私政策</view>
 	         </view>
 	         <view class="left-arrow" >></view>
@@ -79,8 +79,7 @@
 				],
 				pic: getApp().globalData.pic,
 				name: getApp().globalData.name,
-				old_pic: '/static/imgs/奶茶1.jpg',
-				ifName:true
+				old_pic: '/static/imgs/奶茶1.jpg'
 			}
 		},
 		methods: {

@@ -1,7 +1,7 @@
 <template>
-	<view class="fanhui" bindtap="fanhui"><text>{{'<'}} 返回</text></view>
+	<view class="fanhui" @tap="fanhui"><text>{{'<'}} 返回</text></view>
 	<view class="page" style="white-space: pre-line;">
-	  <view wx:if="{{flag1}}">
+	  <view v-if="flag1">
 	    <view style="text-align: center;">
 	      <text style="font-size:22px;font-weight:700;display:block;position: relative;">奶茶店用户隐私政策议</text><br />
 	      <text style="font-size:12px;font-weight:200;display:block;position: relative;">版本更新日期：2023年12月27日</text>
@@ -107,7 +107,7 @@
 	    为了便于您在完成支付后能够及时回到应用界面，在您完成微信、支付宝的支付动作后，我们会调用手机系统的自启动或关联启动行为（仅限安卓版本），以确保您可以及时查看支付状态和订单信息。
 	  </text>
 	  </view>
-	  <view wx:if="{{flag2}}">
+	  <view v-if="flag2">
 	    <view style="text-align: center;">
 	      <text style="font-size:22px;font-weight:700;display:block;position: relative;">用户服务协议</text><br />
 	      <text style="font-size:12px;font-weight:200;display:block;position: relative;">最近更新日期：2021年 12 月 27 日</text>
@@ -192,7 +192,7 @@
 	
 	      （2）不应制作、发布、复制、查阅和传播、存储、链接下列信息：反对《中华人民共和国宪法》所确定的基本原则的；危害国家安全，泄露国家秘密，颠覆国家政权，推翻社会主义制度，煽动国家分裂，破坏国家统一的；损害国家荣誉和利益的；煽动民族仇恨、民族歧视，破坏民族团结的；破坏国家宗教政策，宣扬邪教和封建迷信的；煽动非法集会、结社、游行、示威、聚众扰乱社会秩序的；捏造、散布谣言，侵犯他人权利，扰乱经济、社会秩序，破坏社会稳定的；散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；侮辱或者诽谤他人，侵害他人合法权益的；宣扬恐怖主义、极端主义的；违背当地风俗习惯的；含有法律法规禁止的其他内容的；</text>
 	  </view>
-	  <view wx:if="{{flag3}}" style="text-align: center;">
+	  <view v-if="flag3" style="text-align: center;">
 	    <image src="../../components/imgs/许可证1.jpg" mode="" />
 	  </view>
 	</view>
@@ -221,28 +221,22 @@
 		  const app = getApp();
 		  let app_userInfo = app.globalData.app_userInfo;
 		  if (app_userInfo === null) {
-		    this.setData({
-		      lingquan: "../loginx/loginx",
-		      deliverPath: "../loginx/loginx",
-		      navigatorWay: "redirect"
-		    });
+		      this.lingquan = "../loginx/loginx",
+		      this.deliverPath = "../loginx/loginx",
+		      this.navigatorWay = "redirect"
 		  } else {
-		    this.setData({
-		      lingquan: "../list/list",
-		      deliverPath: "../list/list",
-		      navigatorWay: "switchTab"
-		    });
+		      this.lingquan = "../list/list",
+		      this.deliverPath = "../list/list",
+		      this.navigatorWay = "switchTab"
 		  };
 		},
 		/**
 		 * 生命周期函数--监听页面加载
 		 */
 		onLoad(options) {
-		this.setData({
-		  flag1 : JSON.parse(options.flag1),
-		  flag2 : JSON.parse(options.flag2),
-		  flag3 : JSON.parse(options.flag3)
-		});
+		  this.flag1 = JSON.parse(options.flag1),
+		  this.flag2 = JSON.parse(options.flag2),
+		  this.flag3 = JSON.parse(options.flag3)
 		},
 	}
 </script>
