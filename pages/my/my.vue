@@ -5,27 +5,27 @@
 	      <image class="avatar" :src="pic ? pic : old_pic"></image>
 	      <view  class="name">{{name ?  name : '登录获得更多会员权益' }}</view>
 	    </view>
-	    <view v-if="!name" class="login-btn" @tap="login">授权登录</view>
+	    <view v-if="ifName" class="login-btn" @tap="login">授权登录</view>
 	  </view>
 	  <view class="card-container">
 	    <view class="card">
 	      <view class="meta">
 	        <view class="name">奶茶币</view>
 	      </view>
-	      <image class="icon" :src="swiperImages[0].url"></image>
+	      <image class="icon" :src="swiperImages[0]"></image>
 	    </view>
 	    <view class="card">
 	      <view class="meta">
 	        <view class="name">优惠券</view>
 	      </view>
-	      <image class="icon" :src="swiperImages[1].url"></image>
+	      <image class="icon" :src="swiperImages[1]"></image>
 	    </view>
 	  </view>
 	
 	  <view class="list-items">
 	    <view class="item">
 	         <view class="content">
-	          <image class="icon" :src="swiperImages[2].url"></image>
+	          <image class="icon" :src="swiperImages[2]"></image>
 	          <view class="label">兑换码</view>
 	         </view>
 	         <view class="left-arrow">></view>
@@ -39,14 +39,14 @@
 	    </view>
 	    <view class="item"  @tap="click2" data-code="agreement">
 	         <view class="content">
-	          <image class="icon" :src="swiperImages[4].url"></image>
+	          <image class="icon" :src="swiperImages[4]"></image>
 	          <view class="label">用户协议</view>
 	         </view>
 	         <view class="left-arrow">></view>
 	    </view>
 	    <view class="item" @tap="click3" data-code="xuke">
 	         <view class="content">
-	          <image class="icon" :src="swiperImages[5].url"></image>
+	          <image class="icon" :src="swiperImages[4]"></image>
 	          <view class="label">经营信息公示</view>
 	         </view>
 	         <view class="left-arrow">></view>
@@ -54,7 +54,7 @@
 	
 	    <view class="item item_last"  data-code="xuke">
 	         <view class="content">
-	          <image class="icon" src="../../components/imgs/应用.png"></image>
+	          <image mode="widthFix" class="icon" src="../../components/imgs/应用.png"></image>
 	          <view class="label">奶茶店APP</view>
 	         </view>
 	         <view class="left-arrow">下载APP体验更佳></view>
@@ -71,15 +71,16 @@
 		data() {
 			return {
 				swiperImages: [
-				  '/components/imgs/奶茶1.jpg',
-				  '/components/imgs/奶茶2.jpg',
-				  '/components/imgs/奶茶3.jpg',
-				  '/components/imgs/奶茶4.jpg',
-				  '/components/imgs/奶茶5.jpg',
+				  '/static/imgs/奶茶1.jpg',
+				  '/static/imgs/奶茶2.jpg',
+				  '/static/imgs/奶茶3.jpg',
+				  '/static/imgs/奶茶4.jpg',
+				  '/static/imgs/奶茶5.jpg',
 				],
 				pic: getApp().globalData.pic,
 				name: getApp().globalData.name,
-				old_pic: "/components/imgs/奶茶1.jpg"
+				old_pic: '/static/imgs/奶茶1.jpg',
+				ifName:true
 			}
 		},
 		methods: {
@@ -125,7 +126,6 @@
 		      console.log("ans",ans)
 		    }
 		  })
-		  console.log(this.name)
 		},
 		
 		/**
@@ -152,7 +152,7 @@
 	  height: 100vh;
 	  box-sizing: border-box;
 	  padding: 0 30rpx;
-	  padding-top: 170rpx;
+	  padding-top: 70rpx;
 	}
 	
 	.page .user-area{
@@ -161,7 +161,7 @@
 	  align-items: center;
 	  justify-content: space-between;
 	  margin-bottom: 40rpx;
-	  height: 20rpx;
+	  /* height: 20rpx; */
 	}
 	
 	.page .user-area .user-box{
