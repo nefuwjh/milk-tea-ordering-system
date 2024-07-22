@@ -69,9 +69,7 @@
 			input(e){
 			  let input = e.detail.value
 			  console.log(input);
-			  this.setData({
-			    beizhu:input
-			  })
+			  this.beizhu = input
 			},
 			//提交订单
 			upOrder(){

@@ -22,7 +22,7 @@
 		<view class="background-img">
 		  <view class="book-window">
 		    <view class="search">
-		      <input class="search-frame" bindinput="bindSearchInput" placeholder="搜索新品" type="text" />
+		      <input class="search-frame" @input="bindSearchInput" placeholder="搜索新品" type="text" />
 		      <navigator @tap="getValue" url="../list/list" open-type="switchTab" class="search-icon">
 		        <image src="../../components/imgs/search.jpg" style="width: 100%;height: 100%;" />
 		      </navigator>

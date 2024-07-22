@@ -4,8 +4,8 @@
 	  <view class="logo-title">奶茶店</view>
 	  <view class="intro">成为会员，立享更多优惠福利</view>
 	  <view class="login-tip">授权绑定微信账号 为您提供更好的服务</view>
-	  <button style="width: 500rpx;"  class="login-btn" bindtap="getuser">一键登录</button>
-	  <view style="width: 500rpx;" class="cancel" bindtap="tuichu">取消</view>
+	  <button style="width: 500rpx;"  class="login-btn" @tap="getuser">一键登录</button>
+	  <view style="width: 500rpx;" class="cancel" @tap="tuichu">取消</view>
 	
 	</view>
 </template>
